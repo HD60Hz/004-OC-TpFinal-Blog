@@ -49,11 +49,13 @@ export class PostsService {
   onLike(i: number): void {
     this.posts[i].loveIts += 1;
     this.posts[i].like += 1;
+    this.savePosts();
     this.emitPosts();
   }
   onDislike(i: number): void {
     this.posts[i].loveIts -= 1;
     this.posts[i].dislike += 1;
+    this.savePosts();
     this.emitPosts();
   }
 }
